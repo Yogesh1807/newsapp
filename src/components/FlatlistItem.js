@@ -17,7 +17,7 @@ const FlatlistItem = ({item, navigation, theme}) => {
       <Card
         style={{
           shadowOffset: {width: 5, height: 5},
-          width: '90%',
+          width: '100%',
           borderRadius: 12,
           alignSelf: 'center',
           marginBottom: 10,
@@ -34,9 +34,10 @@ const FlatlistItem = ({item, navigation, theme}) => {
           <Paragraph>Published on {moment(item.date).fromNow()}</Paragraph>
         </Card.Content>
         <ImageLoad
-          style={{width: '100%', height: 250}}
+          style={{height: 390}}
           loadingStyle={{size: 'large', color: 'grey'}}
           source={{uri: item.jetpack_featured_media_url}}
+          resizeMode="cover"
         />
         <Card.Content>
           <Card.Content>
