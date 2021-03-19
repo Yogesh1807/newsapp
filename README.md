@@ -1,0 +1,2 @@
+# newsapp
+inshorts app clone
