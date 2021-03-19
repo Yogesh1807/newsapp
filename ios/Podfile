@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'kriss' do
-  # Pods for kriss
+target 'newsapp' do
+  # Pods for newsapp
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -38,7 +38,7 @@ target 'kriss' do
 
   pod 'react-native-config', :path => '../node_modules/react-native-config'
 
-  target 'krissTests' do
+  target 'newsappTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -46,10 +46,10 @@ target 'kriss' do
   use_native_modules!
 end
 
-target 'kriss-tvOS' do
-  # Pods for kriss-tvOS
+target 'newsapp-tvOS' do
+  # Pods for newsapp-tvOS
 
-  target 'kriss-tvOSTests' do
+  target 'newsapp-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

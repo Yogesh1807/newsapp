@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* krissTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* krissTests.m */; };
+		00E356F31AD99517003FC87E /* newsappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* newsappTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -17,11 +17,11 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* krissTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* krissTests.m */; };
-		7C7D970659D677617CB7E1B2 /* libPods-kriss-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71766E8B696ACA1445D8C4C6 /* libPods-kriss-tvOSTests.a */; };
-		D28CE79E872472F4B052B7A1 /* libPods-kriss-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A288A6BA77F3DFC62F07C0B0 /* libPods-kriss-tvOS.a */; };
-		D69B289D209C4EFEA98DA425 /* libPods-kriss.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 782033F7C7EA06F7DC8BB703 /* libPods-kriss.a */; };
-		F1EFC7BED0EDE0887A15BB37 /* libPods-krissTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85870AACAAAC10EDD30C84C6 /* libPods-krissTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* newsappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* newsappTests.m */; };
+		7C7D970659D677617CB7E1B2 /* libPods-newsapp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71766E8B696ACA1445D8C4C6 /* libPods-newsapp-tvOSTests.a */; };
+		D28CE79E872472F4B052B7A1 /* libPods-newsapp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A288A6BA77F3DFC62F07C0B0 /* libPods-newsapp-tvOS.a */; };
+		D69B289D209C4EFEA98DA425 /* libPods-newsapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 782033F7C7EA06F7DC8BB703 /* libPods-newsapp.a */; };
+		F1EFC7BED0EDE0887A15BB37 /* libPods-newsappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85870AACAAAC10EDD30C84C6 /* libPods-newsappTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,46 +30,46 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = kriss;
+			remoteInfo = newsapp;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "kriss-tvOS";
+			remoteInfo = "newsapp-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* krissTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = krissTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* newsappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newsappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* krissTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = krissTests.m; sourceTree = "<group>"; };
-		04ED44C29D06E8F5676CBD93 /* Pods-kriss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kriss.debug.xcconfig"; path = "Target Support Files/Pods-kriss/Pods-kriss.debug.xcconfig"; sourceTree = "<group>"; };
-		0C5CF00324DC96AA4CA2E56E /* Pods-kriss-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kriss-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-kriss-tvOSTests/Pods-kriss-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* kriss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kriss.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = kriss/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = kriss/AppDelegate.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* newsappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newsappTests.m; sourceTree = "<group>"; };
+		04ED44C29D06E8F5676CBD93 /* Pods-newsapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsapp.debug.xcconfig"; path = "Target Support Files/Pods-newsapp/Pods-newsapp.debug.xcconfig"; sourceTree = "<group>"; };
+		0C5CF00324DC96AA4CA2E56E /* Pods-newsapp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsapp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-newsapp-tvOSTests/Pods-newsapp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* newsapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = newsapp/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = newsapp/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = kriss/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = kriss/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = kriss/main.m; sourceTree = "<group>"; };
-		15A75D4E59E90CB2BB89E825 /* Pods-kriss-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kriss-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-kriss-tvOSTests/Pods-kriss-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = newsapp/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = newsapp/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = newsapp/main.m; sourceTree = "<group>"; };
+		15A75D4E59E90CB2BB89E825 /* Pods-newsapp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsapp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-newsapp-tvOSTests/Pods-newsapp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2108C77E242DE56800273843 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		217204FC242E7917003F4F60 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		217204FE242FA01C003F4F60 /* kriss.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = kriss.entitlements; path = kriss/kriss.entitlements; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* kriss-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kriss-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* kriss-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "kriss-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		71766E8B696ACA1445D8C4C6 /* libPods-kriss-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kriss-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		71D4A7C0E418C29BE72B65DF /* Pods-kriss-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kriss-tvOS.release.xcconfig"; path = "Target Support Files/Pods-kriss-tvOS/Pods-kriss-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		7536498F23EF1B4FD7226BB4 /* Pods-kriss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kriss.release.xcconfig"; path = "Target Support Files/Pods-kriss/Pods-kriss.release.xcconfig"; sourceTree = "<group>"; };
-		782033F7C7EA06F7DC8BB703 /* libPods-kriss.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kriss.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		849F918AD5BB76AE25FF813E /* Pods-kriss-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kriss-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-kriss-tvOS/Pods-kriss-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		85870AACAAAC10EDD30C84C6 /* libPods-krissTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-krissTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D86155EA971E2B6205EABB8 /* Pods-krissTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-krissTests.release.xcconfig"; path = "Target Support Files/Pods-krissTests/Pods-krissTests.release.xcconfig"; sourceTree = "<group>"; };
-		909A7254397F7D808373584A /* Pods-krissTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-krissTests.debug.xcconfig"; path = "Target Support Files/Pods-krissTests/Pods-krissTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A288A6BA77F3DFC62F07C0B0 /* libPods-kriss-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kriss-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		217204FE242FA01C003F4F60 /* newsapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = newsapp.entitlements; path = newsapp/newsapp.entitlements; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* newsapp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "newsapp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* newsapp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "newsapp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71766E8B696ACA1445D8C4C6 /* libPods-newsapp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newsapp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D4A7C0E418C29BE72B65DF /* Pods-newsapp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsapp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-newsapp-tvOS/Pods-newsapp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		7536498F23EF1B4FD7226BB4 /* Pods-newsapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsapp.release.xcconfig"; path = "Target Support Files/Pods-newsapp/Pods-newsapp.release.xcconfig"; sourceTree = "<group>"; };
+		782033F7C7EA06F7DC8BB703 /* libPods-newsapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newsapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		849F918AD5BB76AE25FF813E /* Pods-newsapp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsapp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-newsapp-tvOS/Pods-newsapp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		85870AACAAAC10EDD30C84C6 /* libPods-newsappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newsappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D86155EA971E2B6205EABB8 /* Pods-newsappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsappTests.release.xcconfig"; path = "Target Support Files/Pods-newsappTests/Pods-newsappTests.release.xcconfig"; sourceTree = "<group>"; };
+		909A7254397F7D808373584A /* Pods-newsappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsappTests.debug.xcconfig"; path = "Target Support Files/Pods-newsappTests/Pods-newsappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A288A6BA77F3DFC62F07C0B0 /* libPods-newsapp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newsapp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1EFC7BED0EDE0887A15BB37 /* libPods-krissTests.a in Frameworks */,
+				F1EFC7BED0EDE0887A15BB37 /* libPods-newsappTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D69B289D209C4EFEA98DA425 /* libPods-kriss.a in Frameworks */,
+				D69B289D209C4EFEA98DA425 /* libPods-newsapp.a in Frameworks */,
 				217204FD242E7917003F4F60 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D28CE79E872472F4B052B7A1 /* libPods-kriss-tvOS.a in Frameworks */,
+				D28CE79E872472F4B052B7A1 /* libPods-newsapp-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,20 +104,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C7D970659D677617CB7E1B2 /* libPods-kriss-tvOSTests.a in Frameworks */,
+				7C7D970659D677617CB7E1B2 /* libPods-newsapp-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* krissTests */ = {
+		00E356EF1AD99517003FC87E /* newsappTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* krissTests.m */,
+				00E356F21AD99517003FC87E /* newsappTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = krissTests;
+			path = newsappTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -128,10 +128,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* kriss */ = {
+		13B07FAE1A68108700A75B9A /* newsapp */ = {
 			isa = PBXGroup;
 			children = (
-				217204FE242FA01C003F4F60 /* kriss.entitlements */,
+				217204FE242FA01C003F4F60 /* newsapp.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -141,7 +141,7 @@
 				2108C77E242DE56800273843 /* GoogleService-Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = kriss;
+			name = newsapp;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -150,10 +150,10 @@
 				217204FC242E7917003F4F60 /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				782033F7C7EA06F7DC8BB703 /* libPods-kriss.a */,
-				A288A6BA77F3DFC62F07C0B0 /* libPods-kriss-tvOS.a */,
-				71766E8B696ACA1445D8C4C6 /* libPods-kriss-tvOSTests.a */,
-				85870AACAAAC10EDD30C84C6 /* libPods-krissTests.a */,
+				782033F7C7EA06F7DC8BB703 /* libPods-newsapp.a */,
+				A288A6BA77F3DFC62F07C0B0 /* libPods-newsapp-tvOS.a */,
+				71766E8B696ACA1445D8C4C6 /* libPods-newsapp-tvOSTests.a */,
+				85870AACAAAC10EDD30C84C6 /* libPods-newsappTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,14 +161,14 @@
 		2E3F9F20E0AB8C422205D1B0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				04ED44C29D06E8F5676CBD93 /* Pods-kriss.debug.xcconfig */,
-				7536498F23EF1B4FD7226BB4 /* Pods-kriss.release.xcconfig */,
-				849F918AD5BB76AE25FF813E /* Pods-kriss-tvOS.debug.xcconfig */,
-				71D4A7C0E418C29BE72B65DF /* Pods-kriss-tvOS.release.xcconfig */,
-				15A75D4E59E90CB2BB89E825 /* Pods-kriss-tvOSTests.debug.xcconfig */,
-				0C5CF00324DC96AA4CA2E56E /* Pods-kriss-tvOSTests.release.xcconfig */,
-				909A7254397F7D808373584A /* Pods-krissTests.debug.xcconfig */,
-				8D86155EA971E2B6205EABB8 /* Pods-krissTests.release.xcconfig */,
+				04ED44C29D06E8F5676CBD93 /* Pods-newsapp.debug.xcconfig */,
+				7536498F23EF1B4FD7226BB4 /* Pods-newsapp.release.xcconfig */,
+				849F918AD5BB76AE25FF813E /* Pods-newsapp-tvOS.debug.xcconfig */,
+				71D4A7C0E418C29BE72B65DF /* Pods-newsapp-tvOS.release.xcconfig */,
+				15A75D4E59E90CB2BB89E825 /* Pods-newsapp-tvOSTests.debug.xcconfig */,
+				0C5CF00324DC96AA4CA2E56E /* Pods-newsapp-tvOSTests.release.xcconfig */,
+				909A7254397F7D808373584A /* Pods-newsappTests.debug.xcconfig */,
+				8D86155EA971E2B6205EABB8 /* Pods-newsappTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -183,9 +183,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* kriss */,
+				13B07FAE1A68108700A75B9A /* newsapp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* krissTests */,
+				00E356EF1AD99517003FC87E /* newsappTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				2E3F9F20E0AB8C422205D1B0 /* Pods */,
@@ -198,10 +198,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* kriss.app */,
-				00E356EE1AD99517003FC87E /* krissTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* kriss-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* kriss-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* newsapp.app */,
+				00E356EE1AD99517003FC87E /* newsappTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* newsapp-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* newsapp-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,9 +209,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* krissTests */ = {
+		00E356ED1AD99517003FC87E /* newsappTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "krissTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "newsappTests" */;
 			buildPhases = (
 				FC0D9A94C9F5CBB987202D4A /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -223,14 +223,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = krissTests;
-			productName = krissTests;
-			productReference = 00E356EE1AD99517003FC87E /* krissTests.xctest */;
+			name = newsappTests;
+			productName = newsappTests;
+			productReference = 00E356EE1AD99517003FC87E /* newsappTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* kriss */ = {
+		13B07F861A680F5B00A75B9A /* newsapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "kriss" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "newsapp" */;
 			buildPhases = (
 				657D6EA0C6EBB41EC4A04845 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -245,14 +245,14 @@
 			);
 			dependencies = (
 			);
-			name = kriss;
-			productName = kriss;
-			productReference = 13B07F961A680F5B00A75B9A /* kriss.app */;
+			name = newsapp;
+			productName = newsapp;
+			productReference = 13B07F961A680F5B00A75B9A /* newsapp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* kriss-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* newsapp-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "kriss-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "newsapp-tvOS" */;
 			buildPhases = (
 				5E1A25E6D1DD220FCA3F86B5 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -265,14 +265,14 @@
 			);
 			dependencies = (
 			);
-			name = "kriss-tvOS";
-			productName = "kriss-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* kriss-tvOS.app */;
+			name = "newsapp-tvOS";
+			productName = "newsapp-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* newsapp-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* kriss-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* newsapp-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "kriss-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "newsapp-tvOSTests" */;
 			buildPhases = (
 				022F0CAB5CAE2419FA2FD149 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -284,9 +284,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "kriss-tvOSTests";
-			productName = "kriss-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* kriss-tvOSTests.xctest */;
+			name = "newsapp-tvOSTests";
+			productName = "newsapp-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* newsapp-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -317,7 +317,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "kriss" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "newsapp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -331,10 +331,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* kriss */,
-				00E356ED1AD99517003FC87E /* krissTests */,
-				2D02E47A1E0B4A5D006451C7 /* kriss-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* kriss-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* newsapp */,
+				00E356ED1AD99517003FC87E /* newsappTests */,
+				2D02E47A1E0B4A5D006451C7 /* newsapp-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* newsapp-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -404,7 +404,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-kriss-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-newsapp-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -440,7 +440,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-kriss-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-newsapp-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -462,7 +462,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-kriss-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-newsapp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -485,7 +485,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kriss/Pods-kriss-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-newsapp/Pods-newsapp-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
@@ -526,7 +526,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kriss/Pods-kriss-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newsapp/Pods-newsapp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC0D9A94C9F5CBB987202D4A /* [CP] Check Pods Manifest.lock */ = {
@@ -544,7 +544,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-krissTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-newsappTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -596,7 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* krissTests.m in Sources */,
+				00E356F31AD99517003FC87E /* newsappTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* krissTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* newsappTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,12 +631,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* kriss */;
+			target = 13B07F861A680F5B00A75B9A /* newsapp */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* kriss-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* newsapp-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -648,7 +648,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = kriss;
+			path = newsapp;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -656,7 +656,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 909A7254397F7D808373584A /* Pods-krissTests.debug.xcconfig */;
+			baseConfigurationReference = 909A7254397F7D808373584A /* Pods-newsappTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 4NXPVU3CJ5;
@@ -664,7 +664,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = krissTests/Info.plist;
+				INFOPLIST_FILE = newsappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -674,18 +674,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kriss.app/kriss";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/newsapp.app/newsapp";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D86155EA971E2B6205EABB8 /* Pods-krissTests.release.xcconfig */;
+			baseConfigurationReference = 8D86155EA971E2B6205EABB8 /* Pods-newsappTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 4NXPVU3CJ5;
-				INFOPLIST_FILE = krissTests/Info.plist;
+				INFOPLIST_FILE = newsappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -695,20 +695,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kriss.app/kriss";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/newsapp.app/newsapp";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04ED44C29D06E8F5676CBD93 /* Pods-kriss.debug.xcconfig */;
+			baseConfigurationReference = 04ED44C29D06E8F5676CBD93 /* Pods-newsapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = kriss/kriss.entitlements;
+				CODE_SIGN_ENTITLEMENTS = newsapp/newsapp.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 4NXPVU3CJ5;
-				INFOPLIST_FILE = kriss/Info.plist;
+				INFOPLIST_FILE = newsapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
@@ -716,21 +716,21 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.kriss;
-				PRODUCT_NAME = kriss;
+				PRODUCT_BUNDLE_IDENTIFIER = me.newsapp;
+				PRODUCT_NAME = newsapp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7536498F23EF1B4FD7226BB4 /* Pods-kriss.release.xcconfig */;
+			baseConfigurationReference = 7536498F23EF1B4FD7226BB4 /* Pods-newsapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = kriss/kriss.entitlements;
+				CODE_SIGN_ENTITLEMENTS = newsapp/newsapp.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4NXPVU3CJ5;
-				INFOPLIST_FILE = kriss/Info.plist;
+				INFOPLIST_FILE = newsapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
@@ -738,15 +738,15 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.kriss;
-				PRODUCT_NAME = kriss;
+				PRODUCT_BUNDLE_IDENTIFIER = me.newsapp;
+				PRODUCT_NAME = newsapp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 849F918AD5BB76AE25FF813E /* Pods-kriss-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 849F918AD5BB76AE25FF813E /* Pods-newsapp-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -757,14 +757,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "kriss-tvOS/Info.plist";
+				INFOPLIST_FILE = "newsapp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.kriss-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.newsapp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -774,7 +774,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71D4A7C0E418C29BE72B65DF /* Pods-kriss-tvOS.release.xcconfig */;
+			baseConfigurationReference = 71D4A7C0E418C29BE72B65DF /* Pods-newsapp-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -785,14 +785,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "kriss-tvOS/Info.plist";
+				INFOPLIST_FILE = "newsapp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.kriss-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.newsapp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -802,7 +802,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15A75D4E59E90CB2BB89E825 /* Pods-kriss-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 15A75D4E59E90CB2BB89E825 /* Pods-newsapp-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -812,24 +812,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "kriss-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "newsapp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.kriss-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.newsapp-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kriss-tvOS.app/kriss-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/newsapp-tvOS.app/newsapp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C5CF00324DC96AA4CA2E56E /* Pods-kriss-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 0C5CF00324DC96AA4CA2E56E /* Pods-newsapp-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -839,17 +839,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "kriss-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "newsapp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.kriss-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.newsapp-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kriss-tvOS.app/kriss-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/newsapp-tvOS.app/newsapp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -956,7 +956,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "krissTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "newsappTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -965,7 +965,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "kriss" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "newsapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -974,7 +974,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "kriss-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "newsapp-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -983,7 +983,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "kriss-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "newsapp-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -992,7 +992,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "kriss" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "newsapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
