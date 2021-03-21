@@ -4,7 +4,10 @@ import HTMLRender from 'react-native-render-html';
 import ImageLoad from 'react-native-image-placeholder';
 import moment from 'moment';
 import {Card, Title, Paragraph, withTheme} from 'react-native-paper';
+import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
 
+const SCREEN_WIDTH = getScreenWidth();
+const SCREEN_HEIGHT = getScreenHeight();
 const FlatlistItem = ({item, navigation, theme}) => {
   return (
     <TouchableOpacity
@@ -21,6 +24,7 @@ const FlatlistItem = ({item, navigation, theme}) => {
           borderRadius: 12,
           alignSelf: 'center',
           marginBottom: 10,
+          // height: getScreenHeight(),
         }}>
         <Card.Content>
           {/* <Title>{item.title.rendered}</Title> */}
@@ -34,10 +38,14 @@ const FlatlistItem = ({item, navigation, theme}) => {
           <Paragraph>Published on {moment(item.date).fromNow()}</Paragraph>
         </Card.Content>
         <ImageLoad
-          style={{height: 390}}
+          style={{
+            width: SCREEN_WIDTH,
+            height: 400,
+            // flex: 5,
+          }}
           loadingStyle={{size: 'large', color: 'grey'}}
           source={{uri: item.jetpack_featured_media_url}}
-          resizeMode="cover"
+          resizeMode="contain"
         />
         <Card.Content>
           <Card.Content>
