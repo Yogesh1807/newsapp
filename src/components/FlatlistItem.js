@@ -12,7 +12,7 @@ const FlatlistItem = ({item, navigation, theme}) => {
   return (
     <TouchableOpacity
       onPress={() =>
-        navigation.navigate('SinglePost', {
+        navigation.navigate('News-Detail', {
           post_id: item.id,
           name: item.title.rendered,
         })

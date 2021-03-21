@@ -30,8 +30,8 @@ const Stack = createStackNavigator();
 function HomeStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="FirmWareHelp" component={HomeScreen} />
-      <Stack.Screen name="SinglePost" component={SinglePost} />
+      <Stack.Screen name="FirmNews" component={HomeScreen} />
+      <Stack.Screen name="News-Detail" component={SinglePost} />
     </Stack.Navigator>
   );
 }
@@ -39,7 +39,7 @@ function BookMarkStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Bookmark" component={BookMarkScreen} />
-      <Stack.Screen name="SinglePost" component={SinglePost} />
+      <Stack.Screen name="News-Detail" component={SinglePost} />
     </Stack.Navigator>
   );
 }
@@ -48,16 +48,16 @@ function SettingStack() {
     <Stack.Navigator>
       <Stack.Screen name="Setting" component={SettingScreen} />
       <Stack.Screen name="Feedback" component={Feedback} />
-      <Stack.Screen name="RemoveAds" component={RemoveAds} />
+      <Stack.Screen name="Remove-Ads" component={RemoveAds} />
     </Stack.Navigator>
   );
 }
 function CategorieStack({navigation}) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Categorie" component={CategorieScreen} />
-      <Stack.Screen name="CategorieList" component={CategorieList} />
-      <Stack.Screen name="SinglePost" component={SinglePost} />
+      <Stack.Screen name="Categories" component={CategorieScreen} />
+      <Stack.Screen name="Categorie-News" component={CategorieList} />
+      <Stack.Screen name="News-Detail" component={SinglePost} />
     </Stack.Navigator>
   );
 }

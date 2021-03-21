@@ -57,7 +57,7 @@ const Bookmark = ({navigation}) => {
   } else {
     return (
       <View>
-        <Headline style={{marginLeft: 30}}>Bookmark Post</Headline>
+        {/* <Headline style={{marginLeft: 30}}>Bookmark Post</Headline> */}
 
         <FlatList
           data={bookmarkpost}
