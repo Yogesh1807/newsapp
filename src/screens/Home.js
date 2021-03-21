@@ -1,13 +1,18 @@
 import React, {useState, useEffect, useContext} from 'react';
-import {View, FlatList, ActivityIndicator} from 'react-native';
+import {View, FlatList, ActivityIndicator, StyleSheet} from 'react-native';
 import {Headline, Title} from 'react-native-paper';
+import Config from 'react-native-config';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Carousel from 'react-native-snap-carousel';
+
 import {IApContext} from '../components/IApController';
 import {AdmobContext} from '../components/AdmobController';
 import ContentPlaceholder from '../components/ContentPlaceholder';
 import FlatlistItem from '../components/FlatlistItem';
 import {NetworkContext} from '../components/NetworkController';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Config from 'react-native-config';
+import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
+const SCREEN_WIDTH = getScreenWidth();
+
 const Home = ({navigation}) => {
   const [posts, setPosts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
@@ -16,6 +21,7 @@ const Home = ({navigation}) => {
   const {isConnected} = useContext(NetworkContext);
   let {renderBanner} = useContext(AdmobContext);
   let {showads} = useContext(IApContext);
+
   useEffect(() => {
     if (isFetching) {
       fetchLastestPost();
@@ -95,11 +101,13 @@ const Home = ({navigation}) => {
     );
   } else {
     return (
-      <View>
+      <View style={{flex: 1}}>
         {/* <Headline style={{marginLeft: 23}}>Lastest Post</Headline> */}
-        {showads && renderBanner()}
-        <FlatList
+        {/* {showads && renderBanner()} */}
+        {/* <FlatList
           data={posts}
+          scrollToItem={false}
+          scrollToEnd={false}
           onRefresh={() => onRefresh()}
           refreshing={isFetching}
           onEndReached={() => handleLoadMore()}
@@ -112,10 +120,57 @@ const Home = ({navigation}) => {
             </React.Fragment>
           )}
           keyExtractor={(item, index) => index.toString()}
+        /> */}
+        <Carousel
+          data={posts}
+          renderItem={({item, index}) => (
+            <React.Fragment>
+              <FlatlistItem item={item} navigation={navigation} />
+              {showads && index % 3 == 0 ? renderBanner() : <View />}
+            </React.Fragment>
+          )}
+          sliderWidth={SCREEN_WIDTH}
+          sliderHeight={getScreenHeight()}
+          itemWidth={SCREEN_WIDTH}
+          itemHeight={getScreenHeight() - 0.8}
+          // inactiveSlideOpacity={1}
+          // inactiveSlideScale={1}
+          vertical={true}
+          swipeThreshold={60}
+          onRefresh={() => onRefresh()}
+          refreshing={isFetching}
+          onEndReached={() => handleLoadMore()}
+          onEndReachedThreshold={0.1}
+          keyExtractor={(item, index) => index.toString()}
+          ListFooterComponent={() => renderFooter()}
+          // nestedScrollEnabled
+          // windowSize={5}
+          // onSnapToItem={this.onSlideChange}
+          // ListEmptyComponent={<ShortsLoader />}
         />
       </View>
     );
   }
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  item: {
+    width: SCREEN_WIDTH - 60,
+    height: SCREEN_WIDTH - 60,
+  },
+  imageContainer: {
+    flex: 1,
+    marginBottom: Platform.select({ios: 0, android: 1}), // Prevent a random Android rendering issue
+    backgroundColor: 'white',
+    borderRadius: 8,
+  },
+  image: {
+    ...StyleSheet.absoluteFillObject,
+    resizeMode: 'cover',
+  },
+});
 
 export default Home;

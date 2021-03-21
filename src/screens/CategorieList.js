@@ -1,8 +1,14 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {FlatList, View, ActivityIndicator} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
+import Config from 'react-native-config';
+
+import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
 import ContentPlaceholder from '../components/ContentPlaceholder';
 import FlatlistItem from '../components/FlatlistItem';
-import Config from 'react-native-config';
+
+const SCREEN_WIDTH = getScreenWidth();
+
 const CategorieList = ({navigation, route}) => {
   const [posts, setPosts] = useState([]);
   const [isloading, setIsLoading] = useState(true);
@@ -66,7 +72,7 @@ const CategorieList = ({navigation, route}) => {
   } else {
     return (
       <View>
-        <FlatList
+        {/* <FlatList
           data={posts}
           onRefresh={() => onRefresh()}
           refreshing={isFetching}
@@ -77,6 +83,32 @@ const CategorieList = ({navigation, route}) => {
             <FlatlistItem item={item} navigation={navigation} />
           )}
           keyExtractor={(item, index) => index.toString()}
+        /> */}
+        <Carousel
+          data={posts}
+          renderItem={({item, index}) => (
+            <React.Fragment>
+              <FlatlistItem item={item} navigation={navigation} />
+            </React.Fragment>
+          )}
+          sliderWidth={SCREEN_WIDTH}
+          sliderHeight={getScreenHeight()}
+          itemWidth={SCREEN_WIDTH}
+          itemHeight={getScreenHeight() - 0.8}
+          // inactiveSlideOpacity={1}
+          // inactiveSlideScale={1}
+          vertical={true}
+          swipeThreshold={60}
+          onRefresh={() => onRefresh()}
+          refreshing={isFetching}
+          onEndReached={() => handleLoadMore()}
+          onEndReachedThreshold={0.1}
+          keyExtractor={(item, index) => index.toString()}
+          ListFooterComponent={() => renderFooter()}
+          // nestedScrollEnabled
+          // windowSize={5}
+          // onSnapToItem={this.onSlideChange}
+          // ListEmptyComponent={<ShortsLoader />}
         />
       </View>
     );
