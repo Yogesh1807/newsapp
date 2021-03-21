@@ -1,6 +1,6 @@
-# Demo for Real World React Native Ebook
+# App for Real World Active News Before Launching
 
-this private repo for Real World React Native Ebook.
+this private repo for Real World Active News Before Launching.
 
 ## Installation
 
@@ -9,12 +9,13 @@ following setup environment from [main react native document](https://reactnativ
 clone this repo
 
 ```
-git clone https://github.com/krissnawat/kriss
+git clone https://github.com/Yogesh1807/newsapp.git
 ```
+
 next run yarn or npm for install node module
 
 ```
-cd kriss
+cd newsapp
 yarn
 ```
 
@@ -23,8 +24,8 @@ yarn
 ### for android
 
 1. setup Android device for [developer mode](https://developer.android.com/studio/debug/dev-options)
-2. enabled [USB debugging 
-](https://www.embarcadero.com/starthere/xe5/mobdevsetup/android/en/enabling_usb_debugging_on_an_android_device.html)
+2. enabled [USB debugging
+   ](https://www.embarcadero.com/starthere/xe5/mobdevsetup/android/en/enabling_usb_debugging_on_an_android_device.html)
 3. connect Android device to computer
 4. run `react-native run-android `
 
@@ -33,10 +34,13 @@ yarn
 if your can develop iOS mean your have MacOS nothing for setup simply using iPhone simulator
 
 `react-native run-ios `
+
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
