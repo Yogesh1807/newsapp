@@ -1,4 +1,4 @@
-package com.kriss;
+package com.newsapp;
 
 import android.app.Application;
 import android.content.Context;

@@ -1,5 +1,5 @@
   
-package com.kriss;
+package com.newsapp;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "kriss";
+    return "newsapp";
   }
   @Override
       protected void onCreate(Bundle savedInstanceState) {
