@@ -8,6 +8,7 @@ import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
 
 const SCREEN_WIDTH = getScreenWidth();
 const SCREEN_HEIGHT = getScreenHeight();
+console.log('SCREEN_HEIGHT', SCREEN_HEIGHT);
 const FlatlistItem = ({item, navigation, theme}) => {
   return (
     <TouchableOpacity
@@ -19,12 +20,12 @@ const FlatlistItem = ({item, navigation, theme}) => {
       }>
       <Card
         style={{
-          shadowOffset: {width: 5, height: 5},
-          width: '100%',
+          // shadowOffset: {width: 5, height: 5},
+          width: SCREEN_WIDTH,
           borderRadius: 12,
           alignSelf: 'center',
-          marginBottom: 10,
-          // height: getScreenHeight(),
+          marginBottom: 1,
+          height: SCREEN_HEIGHT - 190,
         }}>
         <Card.Content>
           {/* <Title>{item.title.rendered}</Title> */}
@@ -38,11 +39,8 @@ const FlatlistItem = ({item, navigation, theme}) => {
           <Paragraph>Published on {moment(item.date).fromNow()}</Paragraph>
         </Card.Content>
         <ImageLoad
-          style={{
-            width: SCREEN_WIDTH,
-            height: 400,
-            // flex: 5,
-          }}
+          style={{width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 500}}
+          placeholderStyle={{width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 600}}
           loadingStyle={{size: 'large', color: 'grey'}}
           source={{uri: item.jetpack_featured_media_url}}
           resizeMode="contain"
@@ -53,7 +51,7 @@ const FlatlistItem = ({item, navigation, theme}) => {
               key={theme.dark}
               html={item.excerpt.rendered}
               tagsStyles={{
-                p: {color: theme.colors.text},
+                p: {color: theme.colors.text, fontSize: 16},
               }}
             />
           </Card.Content>

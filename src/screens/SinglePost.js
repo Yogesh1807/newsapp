@@ -34,9 +34,9 @@ const SinglePost = ({route, theme}) => {
     makeSubscription,
     getPurchases,
     showads,
-    pointfromiap
+    pointfromiap,
   } = useContext(IApContext);
-  let {renderBanner, initRewardAds, point, setPoint,} = useContext(AdmobContext);
+  let {renderBanner, initRewardAds, point, setPoint} = useContext(AdmobContext);
 
   useEffect(() => {
     fetchPost();
@@ -102,12 +102,35 @@ const SinglePost = ({route, theme}) => {
       </Card.Content>
     );
   };
+  // const onShare = async (title, uri) => {
+  //   Share.share({
+  //     title: title,
+  //     url: uri,
+  //   });
+  // };
+
   const onShare = async (title, uri) => {
-    Share.share({
-      title: title,
-      url: uri,
-    });
+    try {
+      const result = await Share.share({
+        message: title + ' : ' + uri,
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+          alert(result.activityType);
+        } else {
+          // shared
+          alert('shared');
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+        alert('dismissed');
+      }
+    } catch (error) {
+      alert(error.message);
+    }
   };
+
   const saveBookMark = async post_id => {
     setbookmark(true);
     await AsyncStorage.getItem('bookmark').then(token => {
