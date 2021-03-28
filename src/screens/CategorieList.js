@@ -8,33 +8,59 @@ import ContentPlaceholder from '../components/ContentPlaceholder';
 import FlatlistItem from '../components/FlatlistItem';
 
 const SCREEN_WIDTH = getScreenWidth();
+const SCREEN_HEIGHT = getScreenHeight();
 
 const CategorieList = ({navigation, route}) => {
   const [posts, setPosts] = useState([]);
   const [isloading, setIsLoading] = useState(true);
   const [isFetching, setIsFetching] = useState(false);
   const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
+
   useEffect(() => {
-    fetchLastestPost();
+    if (page <= totalPage) {
+      fetchLastestPost();
+    } else {
+      setIsFetching(false);
+      alert('No data');
+    }
   }, []);
+
   useEffect(() => {
     if (isFetching) {
-      fetchLastestPost();
+      if (page <= totalPage) {
+        fetchLastestPost();
+      } else {
+        setIsFetching(false);
+        alert('No data');
+      }
     }
   }, [isFetching]);
+
   useEffect(() => {
-    if (page > 1) {
+    console.log('pageNu', page, totalPage);
+    if (page <= totalPage) {
       fetchLastestPost();
+    } else {
+      setIsFetching(false);
+      alert('No data');
     }
   }, [page]);
+
   const fetchLastestPost = async () => {
     let categorie_id = route.params.categorie_id;
+    console.log('categorie_id', categorie_id);
     const response = await fetch(
       `${
         Config.API_URL
-      }/wp-json/wp/v2/posts?categories=${categorie_id}&per_page=5&page=${page}`,
-    );
+      }/wp-json/wp/v2/posts?categories=${categorie_id}&per_page=10&page=${page}`,
+    ).then(function(responseHea) {
+      console.log('responseHea', responseHea);
+      setTotalPage(Number(responseHea.headers.map['x-wp-totalpages']));
+      return responseHea;
+    });
     const post = await response.json();
+    console.log('category post', post);
     if (page == 1) {
       setPosts(post);
     } else {
@@ -63,6 +89,7 @@ const CategorieList = ({navigation, route}) => {
       </View>
     );
   }
+
   if (isloading) {
     return (
       <View style={{marginTop: 30, padding: 12}}>
@@ -92,13 +119,14 @@ const CategorieList = ({navigation, route}) => {
             </React.Fragment>
           )}
           sliderWidth={SCREEN_WIDTH}
-          sliderHeight={getScreenHeight()}
+          sliderHeight={SCREEN_HEIGHT - 190}
           itemWidth={SCREEN_WIDTH}
-          itemHeight={getScreenHeight() - 0.8}
+          itemHeight={SCREEN_HEIGHT - 190}
           // inactiveSlideOpacity={1}
           // inactiveSlideScale={1}
+          style={{borderRadius: 12}}
           vertical={true}
-          swipeThreshold={60}
+          swipeThreshold={10}
           onRefresh={() => onRefresh()}
           refreshing={isFetching}
           onEndReached={() => handleLoadMore()}

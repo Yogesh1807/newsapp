@@ -12,6 +12,7 @@ import FlatlistItem from '../components/FlatlistItem';
 import {NetworkContext} from '../components/NetworkController';
 import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
 const SCREEN_WIDTH = getScreenWidth();
+const SCREEN_HEIGHT = getScreenHeight();
 
 const Home = ({navigation}) => {
   const [posts, setPosts] = useState([]);
@@ -21,22 +22,20 @@ const Home = ({navigation}) => {
   const {isConnected} = useContext(NetworkContext);
   let {renderBanner} = useContext(AdmobContext);
   let {showads} = useContext(IApContext);
+  console.log('isLoading', isLoading);
 
   useEffect(() => {
     if (isFetching) {
       fetchLastestPost();
     }
   }, [isFetching]);
-  useEffect(() => {
-    if (isFetching) {
-      fetchLastestPost();
-    }
-  }, [isFetching]);
+
   useEffect(() => {
     if (page > 1) {
       fetchLastestPost();
     }
   }, [page]);
+
   useEffect(() => {
     if (isConnected) {
       fetchLastestPost();
@@ -44,6 +43,7 @@ const Home = ({navigation}) => {
       setIsLoading(false);
     }
   }, [isConnected]);
+
   function onRefresh() {
     setIsFetching(true);
   }
@@ -53,10 +53,11 @@ const Home = ({navigation}) => {
 
   const fetchLastestPost = async () => {
     const response = await fetch(
-      `${Config.API_URL}/wp-json/wp/v2/posts?per_page=5&page=${page}`,
+      `${Config.API_URL}/wp-json/wp/v2/posts?per_page=10&page=${page}`,
     );
     console.log(Config.API_URL);
     const post = await response.json();
+    console.log('postdata', post);
     if (page == 1) {
       setPosts(post);
     } else {
@@ -130,13 +131,14 @@ const Home = ({navigation}) => {
             </React.Fragment>
           )}
           sliderWidth={SCREEN_WIDTH}
-          sliderHeight={getScreenHeight()}
+          sliderHeight={SCREEN_HEIGHT - 190}
           itemWidth={SCREEN_WIDTH}
-          itemHeight={getScreenHeight() - 0.8}
+          itemHeight={SCREEN_HEIGHT - 190}
           // inactiveSlideOpacity={1}
           // inactiveSlideScale={1}
+          style={{borderRadius: 12}}
           vertical={true}
-          swipeThreshold={60}
+          swipeThreshold={10}
           onRefresh={() => onRefresh()}
           refreshing={isFetching}
           onEndReached={() => handleLoadMore()}
@@ -144,7 +146,7 @@ const Home = ({navigation}) => {
           keyExtractor={(item, index) => index.toString()}
           ListFooterComponent={() => renderFooter()}
           // nestedScrollEnabled
-          // windowSize={5}
+          windowSize={10}
           // onSnapToItem={this.onSlideChange}
           // ListEmptyComponent={<ShortsLoader />}
         />
