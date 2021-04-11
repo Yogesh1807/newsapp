@@ -129,10 +129,10 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.newsapp"
+        applicationId "com.firmnews"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 6
+        versionCode 7
         versionName "1.1"
         multiDexEnabled true
 
@@ -153,9 +153,9 @@ android {
             keyPassword 'android'
         }
          release {
-           storeFile file('keystore.jks')
+           storeFile file('my-upload-key.keystore')
            storePassword '111111'
-           keyAlias 'upload'
+           keyAlias 'my-key-alias'
            keyPassword '111111'
        }
 

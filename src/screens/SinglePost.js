@@ -1,5 +1,13 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {
+  Share,
+  ScrollView,
+  TouchableOpacity,
+  View,
+  Dimensions,
+  Linking,
+} from 'react-native';
+import {
   Avatar,
   withTheme,
   Card,
@@ -11,23 +19,27 @@ import {
 import {IApContext} from '../components/IApController';
 import {AdmobContext} from '../components/AdmobController';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import HTML from 'react-native-render-html';
+import HTML, {getParentsTagsRecursively} from 'react-native-render-html';
 import ImageLoad from 'react-native-image-placeholder';
 import AsyncStorage from '@react-native-community/async-storage';
 import Config from 'react-native-config';
-import {
-  Share,
-  ScrollView,
-  TouchableOpacity,
-  View,
-  Dimensions,
-} from 'react-native';
+import ImageView from 'react-native-image-viewing';
+
 import ContentPlaceholder from '../components/ContentPlaceholder';
 import moment from 'moment';
-const SinglePost = ({route, theme}) => {
+import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
+
+const SCREEN_WIDTH = getScreenWidth();
+const SCREEN_HEIGHT = getScreenHeight();
+
+const SinglePost = ({route, navigation, theme}) => {
   const [isLoading, setisLoading] = useState(true);
   const [post, setpost] = useState([]);
   const [bookmark, setbookmark] = useState(false);
+  const [imgVisible, setImgVisible] = useState(false);
+
+  console.log('Siglepost props', navigation);
+
   const {
     products,
     makePurchase,
@@ -49,7 +61,9 @@ const SinglePost = ({route, theme}) => {
       `${Config.API_URL}/wp-json/wp/v2/posts?_embed&include=${post_id}`,
     );
     const post = await response.json();
+    console.log('currentPost', post, SCREEN_WIDTH, SCREEN_HEIGHT);
     setpost(post);
+
     setisLoading(false);
     renderBookMark(post_id);
   };
@@ -80,23 +94,47 @@ const SinglePost = ({route, theme}) => {
       </View>
     );
   };
+
   const renderContent = () => {
     if (showads && point <= 0) {
       return renderPaymentButton();
     }
     return (
-      <Card.Content>
+      <Card.Content style={{paddingVertical: 10, paddingHorizontal: 10}}>
         <HTML
+          // classesStyles={{
+          //   'size-large': {
+          //     width: SCREEN_WIDTH,
+          //     height: 200,
+          //   },
+          // }}
           key={theme.dark}
           html={post[0].content.rendered}
-          imagesMaxWidth={Dimensions.get('window').width}
+          // imagesMaxWidth={SCREEN_WIDTH}
+          // contentWidth={SCREEN_WIDTH}
+          // computeEmbeddedMaxWidth={computeEmbeddedMaxWidth}
           tagsStyles={{
-            p: {color: theme.colors.text},
+            p: {color: theme.colors.text, fontSize: 18},
+            img: {
+              // width: 300,
+              // height: 900,
+              marginTop: 10,
+              objectFit: 'cover',
+              // flex: 1,
+            },
             pre: {color: theme.colors.accent},
             h1: {color: theme.colors.text},
             h2: {color: theme.colors.text},
             h3: {color: theme.colors.text},
             li: {color: theme.colors.text},
+          }}
+          onLinkPress={(e, href, htmlAttribs) => {
+            console.log('linkPress', e, href, htmlAttribs);
+            // Linking.openURL(href);
+            navigation.navigate('Web-Screen', {
+              url: href,
+              name: post[0].title.rendered,
+            });
           }}
         />
       </Card.Content>
@@ -109,7 +147,8 @@ const SinglePost = ({route, theme}) => {
   //   });
   // };
 
-  const onShare = async (title, uri) => {
+  const onShare = async title => {
+    let uri = 'https://play.google.com/store/apps/details?id=com.firmnews';
     try {
       const result = await Share.share({
         message: title + ' : ' + uri,
@@ -118,9 +157,6 @@ const SinglePost = ({route, theme}) => {
         if (result.activityType) {
           // shared with activity type of result.activityType
           alert(result.activityType);
-        } else {
-          // shared
-          alert('shared');
         }
       } else if (result.action === Share.dismissedAction) {
         // dismissed
@@ -179,8 +215,14 @@ const SinglePost = ({route, theme}) => {
       <ScrollView>
         <Card>
           <Card.Content>
-            <Title>{post[0].title.rendered}</Title>
-
+            {/* <Title>{post[0].title.rendered}</Title> */}
+            <HTML
+              key={theme.dark}
+              html={`<h3>${post[0].title.rendered}</h3>`}
+              tagsStyles={{
+                h3: {color: theme.colors.text},
+              }}
+            />
             <List.Item
               title={`${post[0]._embedded.author[0].name}`}
               description={`${post[0]._embedded.author[0].description}`}
@@ -227,9 +269,7 @@ const SinglePost = ({route, theme}) => {
               right={props => {
                 return (
                   <TouchableOpacity
-                    onPress={() =>
-                      onShare(post[0].title.rendered, post[0].link)
-                    }>
+                    onPress={() => onShare(post[0].title.rendered)}>
                     <MaterialCommunityIcons
                       name="share"
                       size={30}
@@ -241,12 +281,23 @@ const SinglePost = ({route, theme}) => {
             />
             <Paragraph />
           </Card.Content>
-
-          <ImageLoad
-            style={{width: '100%', height: 250}}
-            loadingStyle={{size: 'large', color: 'grey'}}
-            source={{uri: post[0].jetpack_featured_media_url}}
-          />
+          <TouchableOpacity
+            onPress={() => {
+              console.log('chamari');
+              setImgVisible(true);
+            }}>
+            <ImageView
+              images={[{uri: post[0].jetpack_featured_media_url}]}
+              imageIndex={0}
+              visible={imgVisible}
+              onRequestClose={() => setImgVisible(false)}
+            />
+            <ImageLoad
+              style={{width: '100%', height: 250}}
+              loadingStyle={{size: 'large', color: 'grey'}}
+              source={{uri: post[0].jetpack_featured_media_url}}
+            />
+          </TouchableOpacity>
           {showads && renderBanner()}
           {renderContent()}
         </Card>

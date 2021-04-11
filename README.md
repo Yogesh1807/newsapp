@@ -15,7 +15,7 @@ git clone https://github.com/Yogesh1807/newsapp.git
 next run yarn or npm for install node module
 
 ```
-cd newsapp
+cd firmnews
 yarn
 ```
 
@@ -27,13 +27,13 @@ yarn
 2. enabled [USB debugging
    ](https://www.embarcadero.com/starthere/xe5/mobdevsetup/android/en/enabling_usb_debugging_on_an_android_device.html)
 3. connect Android device to computer
-4. run `react-native run-android `
+4. run `react-native run-android`
 
 ### for iOS
 
 if your can develop iOS mean your have MacOS nothing for setup simply using iPhone simulator
 
-`react-native run-ios `
+`react-native run-ios`
 
 ## Contributing
 

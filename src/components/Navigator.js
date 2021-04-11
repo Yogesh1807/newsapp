@@ -18,49 +18,121 @@ import CategorieScreen from '../screens/Categories';
 import SettingScreen from '../screens/Setting';
 import BookMarkScreen from '../screens/Bookmark';
 import SinglePost from '../screens/SinglePost';
+import WebScreen from '../screens/WebScreen';
+
 import CategorieList from '../screens/CategorieList';
 import Feedback from '../screens/Feedback';
 import RemoveAds from '../screens/RemoveAds';
 import {IApContext} from './IApController';
-
+// import {Provider} from 'react-redux';
+// import {applyMiddleware, createStore} from 'redux';
+// import thunk from 'redux-thunk';
+// import rootReducer from '../reducers';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {YNEWS_BRAND, WHITE} from '../constants/Colors';
 
 const Stack = createStackNavigator();
-
+const stactOptions = {
+  headerStyle: {
+    backgroundColor: YNEWS_BRAND,
+    elevation: null,
+    shadowOpacity: 0.9,
+  },
+  headerTitleStyle: {
+    color: WHITE,
+    fontFamily: 'Roboto-Bold',
+    fontWeight: '500',
+    fontSize: 22,
+    textAlign: 'center',
+    flexGrow: 0.75,
+  },
+  headerTintColor: WHITE,
+};
 function HomeStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="FirmNews" component={HomeScreen} />
-      <Stack.Screen name="News-Detail" component={SinglePost} />
+      <Stack.Screen
+        name="FirmNews"
+        options={stactOptions}
+        component={HomeScreen}
+      />
+      <Stack.Screen
+        name="News-Detail"
+        component={SinglePost}
+        options={stactOptions}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="Web-Screen"
+        component={WebScreen}
+      />
     </Stack.Navigator>
   );
 }
 function BookMarkStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Bookmark" component={BookMarkScreen} />
-      <Stack.Screen name="News-Detail" component={SinglePost} />
+      <Stack.Screen
+        name="Bookmark"
+        component={BookMarkScreen}
+        options={stactOptions}
+      />
+      <Stack.Screen
+        name="News-Detail"
+        component={SinglePost}
+        options={stactOptions}
+      />
+      <Stack.Screen name="Web-Screen" component={WebScreen} />
     </Stack.Navigator>
   );
 }
 function SettingStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Setting" component={SettingScreen} />
-      <Stack.Screen name="Feedback" component={Feedback} />
-      <Stack.Screen name="Remove-Ads" component={RemoveAds} />
+      <Stack.Screen
+        name="Setting"
+        component={SettingScreen}
+        options={stactOptions}
+      />
+      <Stack.Screen
+        name="Feedback"
+        component={Feedback}
+        options={stactOptions}
+      />
+      <Stack.Screen
+        name="Remove-Ads"
+        component={RemoveAds}
+        options={stactOptions}
+      />
     </Stack.Navigator>
   );
 }
 function CategorieStack({navigation}) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Categories" component={CategorieScreen} />
-      <Stack.Screen name="Categorie-News" component={CategorieList} />
-      <Stack.Screen name="News-Detail" component={SinglePost} />
+      <Stack.Screen
+        name="Categories"
+        component={CategorieScreen}
+        options={stactOptions}
+      />
+      <Stack.Screen
+        name="Categorie-News"
+        component={CategorieList}
+        options={stactOptions}
+      />
+      <Stack.Screen
+        name="News-Detail"
+        component={SinglePost}
+        options={stactOptions}
+      />
+      <Stack.Screen name="Web-Screen" component={WebScreen} />
     </Stack.Navigator>
   );
 }
+
+// console.disableYellowBox = true;
+// const store = createStore(rootReducer, applyMiddleware(thunk));
+
 export default (Navigator = () => {
   const {theme} = useContext(ThemeContext);
   let paper_theme = theme ? PaperDarkTheme : PaperDefaultTheme;
@@ -70,9 +142,9 @@ export default (Navigator = () => {
     initIAp();
     checkValidPurchase();
   }, []);
-
   const Tab = createBottomTabNavigator();
   return (
+    // <Provider store={store}>
     <PaperProvider theme={paper_theme}>
       <NavigationContainer theme={nav_theme}>
         <Tab.Navigator
@@ -98,8 +170,9 @@ export default (Navigator = () => {
             },
           })}
           tabBarOptions={{
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
+            activeTintColor: WHITE,
+            inactiveTintColor: '#b7b5b5',
+            style: {backgroundColor: YNEWS_BRAND},
           }}>
           <Tab.Screen name="Home" component={HomeStack} />
           <Tab.Screen name="Categories" component={CategorieStack} />
@@ -108,5 +181,6 @@ export default (Navigator = () => {
         </Tab.Navigator>
       </NavigationContainer>
     </PaperProvider>
+    // </Provider>
   );
 });
