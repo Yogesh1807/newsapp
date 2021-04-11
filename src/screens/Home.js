@@ -18,6 +18,7 @@ const Home = ({navigation}) => {
   const [posts, setPosts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [page, setPage] = useState(1);
+  const [Allpages, setAllpages] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const {isConnected} = useContext(NetworkContext);
   let {renderBanner} = useContext(AdmobContext);
@@ -31,6 +32,7 @@ const Home = ({navigation}) => {
   }, [isFetching]);
 
   useEffect(() => {
+    console.log('useeffectPage', page);
     if (page > 1) {
       fetchLastestPost();
     }
@@ -47,24 +49,43 @@ const Home = ({navigation}) => {
   function onRefresh() {
     setIsFetching(true);
   }
-  function handleLoadMore() {
-    setPage(page => page + 1);
-  }
+  const handleLoadMore = () => {
+    if (page < Allpages) {
+      setPage(page + 1);
+    } else {
+      setIsFetching(false);
+      setIsLoading(false);
+      alert('No more posts are available');
+    }
+  };
 
   const fetchLastestPost = async () => {
-    const response = await fetch(
-      `${Config.API_URL}/wp-json/wp/v2/posts?per_page=10&page=${page}`,
-    );
-    console.log(Config.API_URL);
-    const post = await response.json();
-    console.log('postdata', post);
-    if (page == 1) {
-      setPosts(post);
+    console.log('page>>>', page);
+    if (page <= Allpages) {
+      const response = await fetch(
+        `${Config.API_URL}/wp-json/wp/v2/posts?per_page=10&page=${page}`,
+      ).then(res => {
+        // console.log('resHeaders', res);
+        if (res !== null) {
+          setAllpages(Number(res.headers.map['x-wp-totalpages']));
+        }
+        return res;
+      });
+      console.log(Config.API_URL);
+      const post = await response.json();
+      // console.log('postdata', post);
+      if (page == 1) {
+        setPosts(post);
+      } else {
+        setPosts([...posts, ...post]);
+      }
+      setIsFetching(false);
+      setIsLoading(false);
     } else {
-      setPosts([...posts, ...post]);
+      setIsFetching(false);
+      setIsLoading(false);
+      alert('No more posts are available');
     }
-    setIsFetching(false);
-    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -125,10 +146,10 @@ const Home = ({navigation}) => {
         <Carousel
           data={posts}
           renderItem={({item, index}) => (
-            <React.Fragment>
+            <>
               <FlatlistItem item={item} navigation={navigation} />
               {showads && index % 3 == 0 ? renderBanner() : <View />}
-            </React.Fragment>
+            </>
           )}
           sliderWidth={SCREEN_WIDTH}
           sliderHeight={SCREEN_HEIGHT - 190}
@@ -136,7 +157,7 @@ const Home = ({navigation}) => {
           itemHeight={SCREEN_HEIGHT - 190}
           // inactiveSlideOpacity={1}
           // inactiveSlideScale={1}
-          style={{borderRadius: 12}}
+          // style={{margin: 0, padding: 0}}
           vertical={true}
           swipeThreshold={10}
           onRefresh={() => onRefresh()}
@@ -146,7 +167,7 @@ const Home = ({navigation}) => {
           keyExtractor={(item, index) => index.toString()}
           ListFooterComponent={() => renderFooter()}
           // nestedScrollEnabled
-          windowSize={10}
+          // windowSize={10}
           // onSnapToItem={this.onSlideChange}
           // ListEmptyComponent={<ShortsLoader />}
         />
