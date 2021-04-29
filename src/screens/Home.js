@@ -125,7 +125,6 @@ const Home = ({navigation}) => {
     return (
       <View style={{flex: 1}}>
         {/* <Headline style={{marginLeft: 23}}>Lastest Post</Headline> */}
-        {/* {showads && renderBanner()} */}
         {/* <FlatList
           data={posts}
           scrollToItem={false}
@@ -148,7 +147,7 @@ const Home = ({navigation}) => {
           renderItem={({item, index}) => (
             <>
               <FlatlistItem item={item} navigation={navigation} />
-              {showads && index % 3 == 0 ? renderBanner() : <View />}
+              {/* {showads && index % 3 == 0 ? renderBanner() : <View />} */}
             </>
           )}
           sliderWidth={SCREEN_WIDTH}
@@ -171,6 +170,7 @@ const Home = ({navigation}) => {
           // onSnapToItem={this.onSlideChange}
           // ListEmptyComponent={<ShortsLoader />}
         />
+        {showads && renderBanner()}
       </View>
     );
   }

@@ -14,7 +14,7 @@ const itemSkus = Platform.select({
 
 export const IApController = ({children}) => {
   const [products, setProducts] = useState([]);
-  const [showads, setShowads] = useState(false);
+  const [showads, setShowads] = useState(true);
   const [pointfromiap, setPointfromiap] = useState();
   const initIAp = async () => {
     try {

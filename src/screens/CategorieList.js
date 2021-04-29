@@ -2,6 +2,8 @@ import React, {useEffect, useState, useContext} from 'react';
 import {FlatList, View, ActivityIndicator} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import Config from 'react-native-config';
+import {IApContext} from '../components/IApController';
+import {AdmobContext} from '../components/AdmobController';
 
 import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
 import ContentPlaceholder from '../components/ContentPlaceholder';
@@ -16,6 +18,9 @@ const CategorieList = ({navigation, route}) => {
   const [isFetching, setIsFetching] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
+
+  let {renderBanner} = useContext(AdmobContext);
+  let {showads} = useContext(IApContext);
 
   useEffect(() => {
     if (page <= totalPage) {
@@ -138,6 +143,7 @@ const CategorieList = ({navigation, route}) => {
           // onSnapToItem={this.onSlideChange}
           // ListEmptyComponent={<ShortsLoader />}
         />
+        {showads && renderBanner()}
       </View>
     );
   }
