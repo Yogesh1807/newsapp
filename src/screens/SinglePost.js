@@ -57,12 +57,17 @@ const SinglePost = ({route, navigation, theme}) => {
   }, []);
   const fetchPost = async () => {
     let post_id = route.params.post_id;
+    console.log('single postid', post_id);
     const response = await fetch(
       `${Config.API_URL}/wp-json/wp/v2/posts?_embed&include=${post_id}`,
     );
     const post = await response.json();
     console.log('currentPost', post, SCREEN_WIDTH, SCREEN_HEIGHT);
-    setpost(post);
+    if (post.length === 0) {
+      alert('Empty data');
+    } else {
+      setpost(post);
+    }
 
     setisLoading(false);
     renderBookMark(post_id);
@@ -96,9 +101,9 @@ const SinglePost = ({route, navigation, theme}) => {
   };
 
   const renderContent = () => {
-    if (showads && point <= 0) {
-      return renderPaymentButton();
-    }
+    // if (showads && point <= 0) {
+    //   return renderPaymentButton();
+    // }
     return (
       <Card.Content style={{paddingVertical: 10, paddingHorizontal: 10}}>
         <HTML
@@ -147,11 +152,16 @@ const SinglePost = ({route, navigation, theme}) => {
   //   });
   // };
 
-  const onShare = async title => {
+  const onShare = async spost => {
     let uri = 'https://play.google.com/store/apps/details?id=com.firmnews';
     try {
       const result = await Share.share({
-        message: title + ' : ' + uri,
+        message:
+          spost.link +
+          '\n' +
+          spost.title.rendered +
+          '\n Download app : \n' +
+          uri,
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -268,8 +278,7 @@ const SinglePost = ({route, navigation, theme}) => {
               ).fromNow()}`}
               right={props => {
                 return (
-                  <TouchableOpacity
-                    onPress={() => onShare(post[0].title.rendered)}>
+                  <TouchableOpacity onPress={() => onShare(post[0])}>
                     <MaterialCommunityIcons
                       name="share"
                       size={30}

@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {FlatList, View, Image, ActivityIndicator} from 'react-native';
-import {Headline, Text} from 'react-native-paper';
+import {Headline, Text, useTheme} from 'react-native-paper';
 import {useIsFocused} from '@react-navigation/native';
 import Config from 'react-native-config';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -9,6 +9,7 @@ import Carousel from 'react-native-snap-carousel';
 import FlatlistItem from '../components/FlatlistItem';
 import ContentPlaceholder from '../components/ContentPlaceholder';
 import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
+import {WHITE} from '../constants/Colors';
 
 const SCREEN_WIDTH = getScreenWidth();
 const SCREEN_HEIGHT = getScreenHeight();
@@ -18,6 +19,7 @@ const Bookmark = ({navigation}) => {
   const [isloading, setisloading] = useState(true);
   const [isFetching, setIsFetching] = useState(false);
   const isFocused = useIsFocused();
+  const {backgroundColor} = useTheme();
 
   useEffect(() => {
     fetchBookMark();
@@ -81,11 +83,18 @@ const Bookmark = ({navigation}) => {
     return (
       <View
         style={{
-          textAlign: 'center',
+          // textAlign: 'center',
           alignItems: 'center',
-          alignSelf: 'center',
+          // alignSelf: 'center',
+          // marginTop: 100,
+          width: '100%',
+          height: '100%',
+          backgroundColor: backgroundColor,
         }}>
-        <Image source={require('../assets/image/nobookmark.png')} />
+        <Image
+          resizeMode="cover"
+          source={require('../assets/image/nobookmark.png')}
+        />
       </View>
     );
   } else {

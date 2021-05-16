@@ -123,7 +123,7 @@ const Home = ({navigation}) => {
     );
   } else {
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: 'white'}}>
         {/* <Headline style={{marginLeft: 23}}>Lastest Post</Headline> */}
         {/* <FlatList
           data={posts}

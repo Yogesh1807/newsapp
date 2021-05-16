@@ -14,10 +14,10 @@ export default function App() {
   React.useEffect(() => {
     SplashScreen.hide();
     initPoint();
-    OneSignal.init('23f8ed57-39e6-4375-a33e-d9b94e13e19c');
-    OneSignal.addEventListener('ids', res => {
-      console.log(res);
-    });
+    // OneSignal.init('23f8ed57-39e6-4375-a33e-d9b94e13e19c');
+    // OneSignal.addEventListener('ids', res => {
+    //   console.log(res);
+    // });
   }, []);
 
   async function initPoint() {

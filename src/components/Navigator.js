@@ -135,8 +135,34 @@ function CategorieStack({navigation}) {
 
 export default (Navigator = () => {
   const {theme} = useContext(ThemeContext);
-  let paper_theme = theme ? PaperDarkTheme : PaperDefaultTheme;
-  let nav_theme = theme ? DarkTheme : DefaultTheme;
+
+  const CustomPaperDefaultTheme = {
+    ...PaperDefaultTheme,
+    roundness: 2,
+    backgroundColor: 'white',
+    // colors: {
+    //   ...PaperDefaultTheme.colors,
+    //   primary: '#3498db',
+    //   accent: '#f1c40f',
+    // },
+  };
+
+  const CustomNavTheme = {
+    ...PaperDefaultTheme,
+    tabBarOptions: {
+      activeTintColor: 'black',
+      inactiveTintColor: '#b7b5b5',
+      backgroundColor: YNEWS_BRAND,
+    },
+    // colors: {
+    //   ...PaperDefaultTheme.colors,
+    //   primary: '#3498db',
+    //   accent: '#f1c40f',
+    // },
+  };
+
+  let paper_theme = theme ? PaperDarkTheme : CustomPaperDefaultTheme;
+  let nav_theme = theme ? DarkTheme : CustomNavTheme;
   const {initIAp, checkValidPurchase, products} = useContext(IApContext);
   useEffect(() => {
     initIAp();
@@ -169,11 +195,7 @@ export default (Navigator = () => {
               );
             },
           })}
-          tabBarOptions={{
-            activeTintColor: WHITE,
-            inactiveTintColor: '#b7b5b5',
-            style: {backgroundColor: YNEWS_BRAND},
-          }}>
+          tabBarOptions={nav_theme.tabBarOptions}>
           <Tab.Screen name="Home" component={HomeStack} />
           <Tab.Screen name="Categories" component={CategorieStack} />
           <Tab.Screen name="Bookmark" component={BookMarkStack} />
