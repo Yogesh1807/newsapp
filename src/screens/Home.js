@@ -11,6 +11,7 @@ import ContentPlaceholder from '../components/ContentPlaceholder';
 import FlatlistItem from '../components/FlatlistItem';
 import {NetworkContext} from '../components/NetworkController';
 import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
+
 const SCREEN_WIDTH = getScreenWidth();
 const SCREEN_HEIGHT = getScreenHeight();
 
@@ -73,14 +74,16 @@ const Home = ({navigation}) => {
       });
       console.log(Config.API_URL);
       const post = await response.json();
-      // console.log('postdata', post);
+      console.log('postdata', post);
       if (page == 1) {
         setPosts(post);
+        setIsFetching(false);
+        setIsLoading(false);
       } else {
         setPosts([...posts, ...post]);
+        setIsFetching(false);
+        setIsLoading(false);
       }
-      setIsFetching(false);
-      setIsLoading(false);
     } else {
       setIsFetching(false);
       setIsLoading(false);
@@ -89,8 +92,10 @@ const Home = ({navigation}) => {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     fetchLastestPost();
   }, []);
+
   function renderFooter() {
     if (isFetching) return null;
     return (
@@ -124,39 +129,18 @@ const Home = ({navigation}) => {
   } else {
     return (
       <View style={{flex: 1, backgroundColor: 'white'}}>
-        {/* <Headline style={{marginLeft: 23}}>Lastest Post</Headline> */}
-        {/* <FlatList
-          data={posts}
-          scrollToItem={false}
-          scrollToEnd={false}
-          onRefresh={() => onRefresh()}
-          refreshing={isFetching}
-          onEndReached={() => handleLoadMore()}
-          onEndReachedThreshold={0.1}
-          ListFooterComponent={() => renderFooter()}
-          renderItem={({item, index}) => (
-            <React.Fragment>
-              <FlatlistItem item={item} navigation={navigation} />
-              {showads && index % 3 == 0 ? renderBanner() : <View />}
-            </React.Fragment>
-          )}
-          keyExtractor={(item, index) => index.toString()}
-        /> */}
         <Carousel
           data={posts}
           renderItem={({item, index}) => (
-            <>
-              <FlatlistItem item={item} navigation={navigation} />
-              {/* {showads && index % 3 == 0 ? renderBanner() : <View />} */}
-            </>
+            <FlatlistItem item={item} navigation={navigation} />
           )}
           sliderWidth={SCREEN_WIDTH}
-          sliderHeight={SCREEN_HEIGHT - 190}
+          sliderHeight={SCREEN_HEIGHT - 150}
           itemWidth={SCREEN_WIDTH}
-          itemHeight={SCREEN_HEIGHT - 190}
+          itemHeight={SCREEN_HEIGHT - 150}
           // inactiveSlideOpacity={1}
           // inactiveSlideScale={1}
-          // style={{margin: 0, padding: 0}}
+          style={{backgroundColor: 'red'}}
           vertical={true}
           swipeThreshold={10}
           onRefresh={() => onRefresh()}
@@ -168,9 +152,12 @@ const Home = ({navigation}) => {
           // nestedScrollEnabled
           // windowSize={10}
           // onSnapToItem={this.onSlideChange}
-          // ListEmptyComponent={<ShortsLoader />}
+          ListEmptyComponent={
+            <View style={{paddingLeft: 10, paddingRight: 10}}>
+              <ContentPlaceholder />
+            </View>
+          }
         />
-        {showads && renderBanner()}
       </View>
     );
   }

@@ -2,7 +2,10 @@ import {Platform} from 'react-native';
 
 export const INSHORTS_BASE_URL = 'https://inshorts.com/api/en';
 export const PAGE_SIZE = 10;
-
+export const gaConstants = {
+  GA_TRACKER_ID: '266235505',
+  GA_TRACKER_INTERVAL: 20,
+};
 const OS = Platform.OS;
 const fontFamilies =
   OS === 'android'

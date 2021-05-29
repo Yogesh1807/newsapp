@@ -160,7 +160,7 @@ const SinglePost = ({route, navigation, theme}) => {
           spost.link +
           '\n' +
           spost.title.rendered +
-          '\n Download app : \n' +
+          '\n Download FirmNews for more technology news  : \n' +
           uri,
       });
       if (result.action === Share.sharedAction) {

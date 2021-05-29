@@ -1,16 +1,21 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useState, useContext} from 'react';
 import {TouchableOpacity} from 'react-native';
 import HTMLRender from 'react-native-render-html';
 import ImageLoad from 'react-native-image-placeholder';
 import moment from 'moment';
 import {Card, Title, Paragraph, withTheme} from 'react-native-paper';
 import {getScreenWidth, getScreenHeight} from '../helpers/DimensionsHelper';
+import {IApContext} from '../components/IApController';
+import {AdmobContext} from '../components/AdmobController';
 
 const SCREEN_WIDTH = getScreenWidth();
 const SCREEN_HEIGHT = getScreenHeight();
 console.log('SCREEN_HEIGHT', SCREEN_HEIGHT);
 let cardHeight = SCREEN_HEIGHT - 185;
 const FlatlistItem = ({item, navigation, theme}) => {
+  let {renderBanner} = useContext(AdmobContext);
+  let {showads} = useContext(IApContext);
+
   return (
     <TouchableOpacity
       onPress={() =>
@@ -23,6 +28,7 @@ const FlatlistItem = ({item, navigation, theme}) => {
         style={{
           // shadowOffset: {width: 5, height: 5},
           // width: SCREEN_WIDTH,
+          backgroundColor: 'red',
           borderRadius: 0,
           alignSelf: 'center',
           marginBottom: 0,
@@ -50,8 +56,8 @@ const FlatlistItem = ({item, navigation, theme}) => {
         <ImageLoad
           style={{
             width: SCREEN_WIDTH,
-            height: cardHeight - 330,
-            marginVertical: 10,
+            height: cardHeight - 400,
+            marginVertical: 5,
           }}
           placeholderStyle={{
             width: SCREEN_WIDTH,
@@ -61,6 +67,8 @@ const FlatlistItem = ({item, navigation, theme}) => {
           source={{uri: item.jetpack_featured_media_url}}
           resizeMode="contain"
         />
+        {showads && renderBanner()}
+
         <Card.Content style={{paddingHorizontal: 10}}>
           <HTMLRender
             imagesMaxWidth={SCREEN_WIDTH}
